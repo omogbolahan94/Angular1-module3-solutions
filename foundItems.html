@@ -1,0 +1,9 @@
+<!-- This directive will display the data in the controller gotten through the service making an API call -->
+
+<ol>
+    <li ng-repeat="item in list.items">
+      {{ item.name }}, {{ item.short_name }}, {{ item.description }}
+      <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+    </li>
+</ol>
+<div class="error" ng-if="list.searchedTerm === '' || list.items.length === 0">Nothing found</div>
